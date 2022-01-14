@@ -6,9 +6,11 @@ class Spawner extends Enemy {
   }
 
   void show() {
-    super.show();
-    fill(red);
+imageMode(CENTER);
+    image(spawner, loc.x, loc.y,100, 100);
+    noFill();
     square(loc.x, loc.y, size);
+    imageMode(CORNER);
   }
 
   void act() {

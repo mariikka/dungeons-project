@@ -88,7 +88,7 @@ PImage potion;
 PImage shield, shieldcount, poison, coin, rock, stake;
 PImage Pause, gameover, YGOR, VERA, KARL, MARY, graves;
 PImage /* dialogue*/ hired, scared, bats, weapongive;
-PImage bat;
+PImage bat, follower, lurker, spawner;
 
 
 //fonts ================
@@ -159,6 +159,9 @@ void setup() {
   bats = loadImage("batsarenasty.png");
   hired = loadImage ("yourethe.png");
   bat = loadImage("bat.png");
+  follower = loadImage("follower.png");
+  lurker = loadImage("lurker.png");
+  spawner = loadImage ("spawner.png");
   //================= objects
   myHero = new Hero();
   myObjects = new ArrayList<GameObjects>();

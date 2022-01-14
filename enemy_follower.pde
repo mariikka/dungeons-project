@@ -8,9 +8,10 @@ class Follower extends Enemy {
   }
 
   void show() {
+    image(follower, loc.x, loc.y, 100, 100);
     stroke(0);
-    strokeWeight(2);
-    fill(white);
+    noStroke();
+    noFill();
     circle(loc.x, loc.y, size);
     fill(black);
     textSize(20);
