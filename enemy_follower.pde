@@ -8,7 +8,9 @@ class Follower extends Enemy {
   }
 
   void show() {
+    imageMode(CENTER);
     image(follower, loc.x, loc.y, 100, 100);
+
     stroke(0);
     noStroke();
     noFill();
@@ -16,6 +18,7 @@ class Follower extends Enemy {
     fill(black);
     textSize(20);
     text(hp, loc.x, loc.y);
+        imageMode(CORNER);
   }
   void act() {
     dropTr++;

@@ -9,7 +9,9 @@ class Bat extends Enemy {
   }
 
   void show() {
+    imageMode(CENTER);
     image(bat, loc.x, loc.y, 100, 100);
+    imageMode(CORNER);
     stroke(0);
     noStroke();
     noFill();

@@ -22,27 +22,29 @@ class Hero extends GameObjects {
   }
 
   void show() {
-
+imageMode(CENTER);
     currentAction.show(loc.x, loc.y, size*2/1.5*1.5*1.5, size*2*1.5);
+    imageMode(CORNER);
+
     //healthbar
     rectMode(CENTER);
     fill(brightRed);
     stroke(0);
     strokeWeight(2);
     float lifemeter = map(hp, 0, 100, 0, 70);
-    rect(loc.x, loc.y + -35, 70, 10);
+    rect(loc.x +20, loc.y + -20, 70, 10);
     fill(green);
     noStroke();
-    rect(loc.x, loc.y - 35, lifemeter, 10);
+    rect(loc.x + 20, loc.y - 20, lifemeter, 10);
   }
 
   void act() {
 
     //collisions updated for sprite siz3 
-    if (loc.x > 635) loc.x = 634;
-    if (loc.x < 42) loc.x = 41;
-    if (loc.y > 430) loc.y = 429;
-    if (loc.y < 35) loc.y = 34;
+    if (loc.x > 700) loc.x = 699;
+    if (loc.x < 102) loc.x = 101;
+    if (loc.y > 500) loc.y = 499;
+    if (loc.y < 70) loc.y = 69;
 
 
     super.act();
@@ -63,7 +65,8 @@ class Hero extends GameObjects {
     if (skey) vel.y = speed;
     if (akey) vel.x = -speed;
     if (dkey) vel.x = speed;
-
+    if (hp <=0) mode = GAMEOVER;
+    if (pause) mode = PAUSE;
     if (vel.mag() > speed) vel.setMag(speed);
 
     if (!wkey && !skey) vel.y = vel.y*0.9;
@@ -80,26 +83,26 @@ class Hero extends GameObjects {
 
     //moving around rooms
 
-    if (northRoom!=#FFFFFF && loc.x > 309 && loc.x < 361 && loc.y <=34) {
+    if (northRoom!=#FFFFFF && loc.x > 364 && loc.x < 439 && loc.y <=69) {
       roomY--;
       loc = new PVector (width/2, 497);
       cleanUp();
     }
 
-    if (eastRoom!=#FFFFFF && loc.y > 225 && loc.y < 230 && loc.x >= 634) {
+    if (eastRoom!=#FFFFFF && loc.y > 254 && loc.y < 314 && loc.x >= 697) {
 
       roomX++;
       loc = new PVector (113, height/2);
       cleanUp();
     }
 
-    if (southRoom!=#FFFFFF && loc.x > 309 && loc.x < 376 && loc.y >= 428) {
+    if (southRoom!=#FFFFFF && loc.x > 364 && loc.x < 439 && loc.y >= 499) {
       roomY++;
       loc = new PVector (width/2, 103);
       cleanUp();
     }
 
-    if (westRoom!=#FFFFFF && loc.y > 225 && loc.y < 230 && loc.x <= 40) {
+    if (westRoom!=#FFFFFF && loc.y > 254 && loc.y < 314 && loc.x <= 101) {
       roomX--;
       loc = new PVector (687, height/2);
       cleanUp();

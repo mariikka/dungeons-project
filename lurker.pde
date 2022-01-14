@@ -5,7 +5,9 @@ class Lurker extends Enemy {
   }
 
   void show() {
+    imageMode(CENTER);
     image(lurker, loc.x, loc.y, 100, 100);
+    imageMode(CORNER);
     noStroke();
     noFill();
     circle(loc.x, loc.y, size);
