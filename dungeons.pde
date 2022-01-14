@@ -1,12 +1,13 @@
 //Marika H
 
 /*controls:
-p for pause screeen/update screen
-space for shoot
-m for map 
-1 for weapon 1, 2 for weapon 2 (once given in the game, not functional immediately)
-
-*/
+ p for pause screeen/update screen
+ space for shoot
+ m for map 
+ 1 for weapon 1, 2 for weapon 2 (once given in the game, not functional immediately)
+ 
+ note: green rooms are empty 
+ */
 
 
 
@@ -87,6 +88,7 @@ PImage potion;
 PImage shield, shieldcount, poison, coin, rock, stake;
 PImage Pause, gameover, YGOR, VERA, KARL, MARY, graves;
 PImage /* dialogue*/ hired, scared, bats, weapongive;
+PImage bat;
 
 
 //fonts ================
@@ -94,16 +96,16 @@ PFont iFont, yFont;
 
 
 void setup() {
-  mode = INTRO;
- 
+  mode = NAMESELECT;
+
   pointsWin = 0;
   size(800, 600, FX2D);
-  Giff = new AnimatedGif(247, 1,"gif1/frame_", "_delay-0.04s.png" );
-  spriteUp = new AnimatedGif (7, 4,"sprite/up/sprite_", ".png");
-  spriteDown = new AnimatedGif (7,4, "sprite/down/sprite_", ".png");
-  spriteLeft = new AnimatedGif (9, 4,"sprite/left/sprite_", ".png");
-  spriteRight = new AnimatedGif (9, 4,"sprite/right/sprite_", ".png");
-  grass = new AnimatedGif (6, 10,"frame_", "_delay-0.13s.gif");
+  Giff = new AnimatedGif(247, 1, "gif1/frame_", "_delay-0.04s.png" );
+  spriteUp = new AnimatedGif (7, 4, "sprite/up/sprite_", ".png");
+  spriteDown = new AnimatedGif (7, 4, "sprite/down/sprite_", ".png");
+  spriteLeft = new AnimatedGif (9, 4, "sprite/left/sprite_", ".png");
+  spriteRight = new AnimatedGif (9, 4, "sprite/right/sprite_", ".png");
+  grass = new AnimatedGif (6, 10, "frame_", "_delay-0.13s.gif");
 
   //============================= buttons
   introButton   = new Button(iFont, "Begin", 400, 530, 300, 100, black, white);
@@ -156,6 +158,7 @@ void setup() {
   scared = loadImage("scared.png");
   bats = loadImage("batsarenasty.png");
   hired = loadImage ("yourethe.png");
+  bat = loadImage("bat.png");
   //================= objects
   myHero = new Hero();
   myObjects = new ArrayList<GameObjects>();
@@ -217,6 +220,8 @@ void draw() {
   if (storyButton.clicked) {
     mode = NAMESELECT;
   }
+
+  if (BEGIN.clicked) mode = GAME;
 
 
 

@@ -14,13 +14,12 @@ void name() {
   if (Ygor.clicked) name = 1;
 
   if (Mary.clicked) name = 2;
-  
+
   if (Karl.clicked) name = 3;
-  
+
   if (Vera.clicked) name = 4;  
-  
- 
-  
+
+
+
   BEGIN.show();
-   if (BEGIN.clicked) mode = GAME;
 }

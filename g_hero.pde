@@ -37,18 +37,18 @@ class Hero extends GameObjects {
   }
 
   void act() {
-    
+
     //collisions updated for sprite siz3 
-  if (loc.x > 635) loc.x = 634;
+    if (loc.x > 635) loc.x = 634;
     if (loc.x < 42) loc.x = 41;
     if (loc.y > 430) loc.y = 429;
     if (loc.y < 35) loc.y = 34;
-    
-    
+
+
     super.act();
 
 
-    
+
     if (immune) {
       immunetime++;
       c = red;
@@ -79,7 +79,7 @@ class Hero extends GameObjects {
     }
 
     //moving around rooms
-println(loc.x, loc.y);
+
     if (northRoom!=#FFFFFF && loc.x > 309 && loc.x < 361 && loc.y <=34) {
       roomY--;
       loc = new PVector (width/2, 497);
@@ -111,7 +111,7 @@ println(loc.x, loc.y);
       mode = GAMEOVER;
     }
     if (hp > hpMAX) hp = hpMAX;
-    
+
     //weapon pick function
     if (ONEkey) myWeapon = new AutoPistol();
     if (TWOkey) myWeapon = new ShotGun();

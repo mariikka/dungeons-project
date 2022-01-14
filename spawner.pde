@@ -20,7 +20,7 @@ class Spawner extends Enemy {
     }
     if (hp<=0) {
       myObjects.add(new droppedItem(loc.x, loc.y, roomX, roomY));
-        myObjects.add(new Message(loc.x, loc.y, 5));
+      myObjects.add(new Message(loc.x, loc.y, 5));
     }
   }
 }

@@ -18,23 +18,18 @@ void game() {
   if (pause == true) {
     mode = PAUSE;
   }
-  
+
   //dialogue 1
 
-  if (Dialoguetime > 0 && Dialoguetime < 210){
+  if (Dialoguetime > 0 && Dialoguetime < 210) {
     image(hired, 160, 400, 500, 160);
-  
   }
-    if (Dialoguetime > 210 && Dialoguetime < 370){
+  if (Dialoguetime > 210 && Dialoguetime < 370) {
     image(scared, 160, 400, 500, 160);
-  
   }
-  if (Dialoguetime > 370 && Dialoguetime < 590){
+  if (Dialoguetime > 370 && Dialoguetime < 590) {
     image(bats, 160, 400, 500, 160);
-  
   }
-  
-
 }
 
 void drawRoom() {

@@ -8,7 +8,7 @@ class Button {
 
 
   Button(PFont _font, String t, int _x, int _y, int _w, int _h, color norm, color high) {
-   font = _font;
+    font = _font;
     x = _x;
     y = _y;
     w = _w;
@@ -18,10 +18,9 @@ class Button {
     normal = norm;
     clicked = false;
 
-    
-//iFont = createFont("OldLondon.ttf", 50);
-//  yFont = createFont("yFont.otf", 50);
 
+    //iFont = createFont("OldLondon.ttf", 50);
+    //  yFont = createFont("yFont.otf", 50);
   }
 
   void show() {

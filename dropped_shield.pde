@@ -33,7 +33,7 @@ class droppedItemshield extends GameObjects {
       myHero.immune = true;
       loc = new PVector(-1000, -176);
       if (myHero.immunetime >= 100) {
-         hp = 0;
+        hp = 0;
       }
     }
   }

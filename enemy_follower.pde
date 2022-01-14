@@ -28,13 +28,13 @@ class Follower extends Enemy {
     if (hp <=0 && pickType == 1) {
       myObjects.add(new droppedItemshield(loc.x, loc.y, roomX, roomY));
       money = money + 3;
-        myObjects.add(new Message(loc.x, loc.y, 5));
+      myObjects.add(new Message(loc.x, loc.y, 5));
     }
 
     if (hp <=0 && pickType == 2) {
       myObjects.add(new droppedItempoison(loc.x, loc.y, roomX, roomY));
       money = money + 3;
-        myObjects.add(new Message(400, 300, 5));
+      myObjects.add(new Message(400, 300, 5));
     }
 
     vel = new PVector(myHero.loc.x - loc.x, myHero.loc.y - loc.y);

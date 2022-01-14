@@ -23,11 +23,11 @@ class GameObjects {
     //if (loc.x < 111) loc.x = 112;
     //if (loc.y > 497) loc.y = 496;
     //if (loc.y < 102) loc.y = 103;
-    
-       if (mode == GAMEOVER) hp = 0; 
+
+    if (mode == GAMEOVER) hp = 0;
   }
-  
-  
+
+
 
   boolean inRoomWith(GameObjects obj) {
     if (roomX == obj.roomX && roomY == obj.roomY)

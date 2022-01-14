@@ -31,8 +31,8 @@ class Enemy extends GameObjects {
 
   void act() {
     super.act();
-    
- 
+
+
 
     //money and points
     if (hp <=0) {

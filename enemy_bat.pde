@@ -9,9 +9,10 @@ class Bat extends Enemy {
   }
 
   void show() {
+    image(bat, loc.x, loc.y, 100, 100);
     stroke(0);
-    strokeWeight(2);
-    fill(black);
+    noStroke();
+    noFill();
     circle(loc.x, loc.y, size);
     fill(255);
     textSize(20);
@@ -60,15 +61,13 @@ class Bat extends Enemy {
     if (hp <=0) {
       myObjects.add(new droppedItem(loc.x, loc.y, roomX, roomY));
       money = money + 10;
-        myObjects.add(new Message(400, 300, 5));
-        
+      myObjects.add(new Message(400, 300, 5));
     }
-        dialogueTime++;
-    if (hp <=0 && myHero.roomX == 1 && myHero.roomY == 3){
-println("win");
-println(dialogueTime);
+    dialogueTime++;
+    if (hp <=0 && myHero.roomX == 1 && myHero.roomY == 3) {
+
+
       image(weapongive, 160, 400, 500, 160);
-      
     }
   }
 }

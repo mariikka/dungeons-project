@@ -11,7 +11,7 @@ class AnimatedGif {
     numFrames = nf;
     gif = new PImage [numFrames];
     frame = 0;
-      rate = r;
+    rate = r;
 
     while (frame < numFrames) {
       gif[frame] = loadImage(before +frame+ after);
